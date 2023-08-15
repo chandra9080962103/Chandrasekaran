@@ -16,7 +16,7 @@ K = 0.01
 
 # goal position
 goal_x = 1
-goal_y = 1
+goal_y = 3
 # Commanded velocity 
 move = Twist() # defining the way we can allocate the values
 move.linear.x = 0
@@ -49,7 +49,7 @@ def controller():
   if orientation_error > 180:
     orientation_error = orientation_error - 360
   move.angular.z = K * orientation_error
-  move.linear.x = 0.5 # Linear velocity
+  move.linear.x = 0.2 # Linear velocity
   print("Des angle",desired_orientation)
   print("Error", orientation_error)
   
